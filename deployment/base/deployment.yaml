@@ -22,11 +22,11 @@ spec:
           image: code-server:latest
           resources:
             requests:
-              cpu: 500m
-              memory: 1G
+              cpu: 300m
+              memory: 512M
             limits:
-              cpu: 500m
-              memory: 1G
+              cpu: 300m
+              memory: 512M
           ports:
             - containerPort: 80
           volumeMounts:
