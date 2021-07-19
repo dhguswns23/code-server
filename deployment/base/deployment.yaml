@@ -22,10 +22,10 @@ spec:
           image: code-server:latest
           resources:
             requests:
-              cpu: 300m
+              cpu: 400m
               memory: 512M
             limits:
-              cpu: 300m
+              cpu: 400m
               memory: 512M
           ports:
             - containerPort: 80
