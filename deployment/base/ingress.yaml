@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: code-server-ingress
+spec:
+  rules:
+    - host: ${EXTERN_DOMAIN}
+      http:
+        paths:
+          - path: /*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: code-server-service
+                port:
+                  number: 80
