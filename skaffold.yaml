@@ -1,0 +1,24 @@
+apiVersion: skaffold/v2beta18
+kind: Config
+metadata:
+  name: code-server
+build:
+  artifacts:
+  - image: code-server
+    docker:
+      dockerfile: DockerfileDev
+deploy:
+  kustomize:
+    paths:
+    - deployment\base
+profiles:
+- name: development
+  deploy:
+    kustomize:
+      paths:
+      - deployment\overlays\development
+- name: production
+  deploy:
+    kustomize:
+      paths:
+      - deployment\overlays\production
